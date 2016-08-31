@@ -1,11 +1,9 @@
 $(document).ready(function() {
-  console.log('ready');
-  //var fizz = false;
-  //var buzz = false;
+var userInput = +prompt('What number would you like to count to');
+console.log(typeof userInput)
+
   function fizzy(number) {
-    //fizz = false;
     if(number % 3 === 0) {
-      //fizz = true;
       return true;
     } else {
       return false;
@@ -13,10 +11,7 @@ $(document).ready(function() {
   };
 
   function buzzy(number) {
-    //buzz = false;
     if(number % 5 === 0) {
-      //fizz = true;
-      console.log(number)
       return true;
     } else {
       return false;
@@ -24,7 +19,8 @@ $(document).ready(function() {
   };
 
   function fizzBuzz(number) {
-    console.log('running');
+    parseInt(number);
+
     for(var i = 1; i <= number; i++) {      
       if(buzzy(i) && fizzy(i)) {
         $('.output').append('<p>FizzBuzz</p>');
@@ -38,5 +34,9 @@ $(document).ready(function() {
     };
   };
 
-  fizzBuzz(100);
+  while (userInput % 1 != 0) {
+      alert('Please provide a number with no decimals');
+      userInput = +prompt('What number would you like to count to');
+    } 
+    fizzBuzz(userInput);
 });
